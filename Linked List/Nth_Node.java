@@ -1,4 +1,5 @@
-public class que1 {
+// Search and Remove N-th Node from End
+public class Nth_Node {
 
   Node head;
 
@@ -62,14 +63,11 @@ public class que1 {
   }
 
   public static void main(String[] args) {
-    que1 list = new que1();
+    Nth_Node list = new Nth_Node();
     list.addfirst("i");
     list.addfirst("am");
     list.addfirst("antriksh");
     list.addfirst("yadav");
-    // list.print();
-    // list.size();
     list.searchnth(2);
-    // list.delete(3);
   }
 }
