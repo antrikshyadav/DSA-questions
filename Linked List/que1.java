@@ -1,0 +1,75 @@
+public class que1 {
+
+  Node head;
+
+  class Node {
+
+    String data;
+    Node next;
+
+    Node(String data) {
+      this.data = data;
+      this.next = null;
+    }
+  }
+
+  public void addfirst(String data) {
+    Node newnode = new Node(data);
+    if (head == null) {
+      head = newnode;
+      return;
+    }
+    newnode.next = head;
+    head = newnode;
+  }
+
+  public void print() {
+    Node currNode;
+    currNode = head;
+    while (currNode != null) {
+      System.out.print(currNode.data + "->");
+      currNode = currNode.next;
+    }
+  }
+
+  public int size() {
+    int size = 0;
+    Node currNode;
+    currNode = head;
+    while (currNode != null) {
+      currNode = currNode.next;
+      size++;
+    }
+    return size;
+  }
+
+  public void delete(int d) {
+    Node currNode = head;
+    Node prev = currNode;
+    for (int j = 1; j <= d - 1; j++) {
+      prev = currNode;
+      currNode = currNode.next;
+    }
+    prev.next = currNode.next;
+  }
+
+  public void searchnth(int n) {
+    Node del = head.next;
+    int s = size() - n + 1;
+    int d = s - 1;
+    delete(d);
+    print();
+  }
+
+  public static void main(String[] args) {
+    que1 list = new que1();
+    list.addfirst("i");
+    list.addfirst("am");
+    list.addfirst("antriksh");
+    list.addfirst("yadav");
+    // list.print();
+    // list.size();
+    list.searchnth(2);
+    // list.delete(3);
+  }
+}
